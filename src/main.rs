@@ -105,7 +105,8 @@ async fn main() {
             )
             .await;
 
-            if result.is_ok() {
+            if let Ok(Ok(_)) = result {
+
                 match service {
                     Some(name) => println!("Port {:5} OPEN  ({})", port, name),
                     None => println!("Port {:5} OPEN", port),
